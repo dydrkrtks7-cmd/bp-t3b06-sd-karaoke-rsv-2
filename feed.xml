@@ -5,10 +5,17 @@
   <link>https://dydrkrtks7-cmd.github.io/bp-t3b06-sd-karaoke-rsv-2</link>
   <description><![CDATA[가라오케 - 신도림 가라오케 예약 관련 최신 소식 및 가이드]]></description>
   <language>ko</language>
-  <pubDate>Thu, 11 Jun 2026 03:44:13 GMT</pubDate>
-  <lastBuildDate>Thu, 11 Jun 2026 03:44:13 GMT</lastBuildDate>
+  <pubDate>Mon, 15 Jun 2026 11:38:58 GMT</pubDate>
+  <lastBuildDate>Mon, 15 Jun 2026 11:38:58 GMT</lastBuildDate>
   <atom:link href="https://dydrkrtks7-cmd.github.io/bp-t3b06-sd-karaoke-rsv-2/feed.xml" rel="self" type="application/rss+xml" />
   
+    <item>
+      <title><![CDATA[신도림 가라오케 예약 선택 전에 확인할 체크리스트와 실패 사례]]></title>
+      <link>https://dydrkrtks7-cmd.github.io/bp-t3b06-sd-karaoke-rsv-2/posts/checklist-001-rfuzjj.html</link>
+      <guid isPermaLink="true">https://dydrkrtks7-cmd.github.io/bp-t3b06-sd-karaoke-rsv-2/posts/checklist-001-rfuzjj.html</guid>
+      <description><![CDATA[### 신도림 가라오케 예약 선택 전에 확인할 체크리스트와 실패 사례 #### 소제목 1데모 버전과 본 게임 간 지역 배치 차이를 살펴보면, 레트로 에뮬 정확도가 엄청난 편이며, 이로 인해 원래 없던 특정 지역이 존재하게 되었습니다. 이는 주요 패치 이후에도 여전히 존]]></description>
+      <pubDate>Mon, 15 Jun 2026 00:00:00 GMT</pubDate>
+    </item>
     <item>
       <title><![CDATA[신도림 가라오케 예약 선택 전에 확인할 체크리스트와 실패 사례]]></title>
       <link>https://dydrkrtks7-cmd.github.io/bp-t3b06-sd-karaoke-rsv-2/posts/checklist-002-16sb0o5.html</link>
@@ -29,6 +36,13 @@
       <guid isPermaLink="true">https://dydrkrtks7-cmd.github.io/bp-t3b06-sd-karaoke-rsv-2/posts/juice-2.html</guid>
       <description><![CDATA[]]></description>
       <pubDate>Sun, 24 May 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[신도림 가라오케 예약에 관한 흔한 오해, 직접 확인해보니 달랐던 점]]></title>
+      <link>https://dydrkrtks7-cmd.github.io/bp-t3b06-sd-karaoke-rsv-2/posts/myth-002-rfuzjj.html</link>
+      <guid isPermaLink="true">https://dydrkrtks7-cmd.github.io/bp-t3b06-sd-karaoke-rsv-2/posts/myth-002-rfuzjj.html</guid>
+      <description><![CDATA[### 신도림 가라오케 예약에 대한 흔한 오해 아, 진짜... 글룸헤이븐 1판과 2판 사이에 변경된 클래스 카드 7종의 정확한 스탯 차이와 밸런스 변경 이유를 간략하게 요약해보겠습니다. #### 주제: 구체적 닐치 콘텐츠 작성 **검색 의도 대응**1. **변경된 클래]]></description>
+      <pubDate>Mon, 15 Jun 2026 00:00:00 GMT</pubDate>
     </item>
     <item>
       <title><![CDATA[메일 인프라 신뢰 확보를 위한 DMARC(Domain-based Message Authentication) 거부 정책 설정 시기]]></title>
