@@ -1,361 +1,80 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>신도림 가라오케 예약 | 정보</title>
-    <meta name="description" content="신도림 가라오케 정보 한눈에! 위치, 시설, 가격, 예약 방법까지 싹 다 알려줌. 010-6279-0862로 전화하면 바로 예약 완료.">
-    <meta name="keywords" content="신도림 가라오케 정보, 신도림 가라오케 위치, 신도림 가라오케 가격, 신도림 노래방 정보, 신도림 가라오케 시설">
-    <link rel="canonical" href="https://t3b06-sd-karaoke-rsv-2.vercel.app/info">
-    <meta property="og:title" content="신도림 가라오케 예약 | 정보">
-    <meta property="og:description" content="신도림 가라오케 정보 모음. 내가 직접 가보고 알려주는 꿀팁까지! 전화 010-6279-0862">
-    <meta property="og:image" content="https://t3b06-sd-karaoke-rsv-2.vercel.app/og-image.svg">
-    <meta property="og:url" content="https://t3b06-sd-karaoke-rsv-2.vercel.app/info">
-    <meta name="robots" content="index, follow">
-    <link rel="stylesheet" href="style.css">
-    <style>
-        :root {
-            --bg: #0f0f0f;
-            --text: #f0f0f0;
-            --accent: #ff3b3b;
-            --card-bg: #1a1a1a;
-            --border: #2a2a2a;
-            --radius: 8px;
-            --font: 'Inter', system-ui, sans-serif;
-        }
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: var(--font);
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-        a {
-            color: var(--accent);
-            text-decoration: none;
-            transition: opacity .2s;
-        }
-        a:hover {
-            opacity: .8;
-        }
-        img, svg {
-            max-width: 100%;
-            display: block;
-        }
-        @media (max-width: 768px) {
-            body {
-                font-size: 15px;
-            }
-        }
-        header {
-            background: #111;
-            border-bottom: 1px solid var(--border);
-            padding: 0 1rem;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .logo {
-            font-size: 1.3rem;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            color: var(--text);
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .logo span {
-            background: var(--accent);
-            color: #fff;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: .7rem;
-            font-weight: 600;
-        }
-        nav ul {
-            display: flex;
-            gap: 1.5rem;
-            list-style: none;
-        }
-        nav ul li a {
-            color: #aaa;
-            font-size: .9rem;
-            transition: color .2s;
-        }
-        nav ul li a:hover {
-            color: var(--text);
-        }
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            background: none;
-            border: none;
-            padding: 4px;
-        }
-        .hamburger span {
-            display: block;
-            width: 24px;
-            height: 2px;
-            background: var(--text);
-            transition: .2s;
-        }
-        .nav-mobile {
-            display: none;
-        }
-        @media (max-width: 768px) {
-            nav ul {
-                display: none;
-            }
-            .hamburger {
-                display: flex;
-            }
-            .nav-mobile.active {
-                display: flex;
-                flex-direction: column;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                width: 100%;
-                background: #111;
-                border-bottom: 1px solid var(--border);
-                padding: 1rem;
-                gap: .8rem;
-            }
-            .nav-mobile.active a {
-                color: #aaa;
-                font-size: 1rem;
-                padding: .4rem 0;
-            }
-        }
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
-        }
-        .section-title {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            letter-spacing: -0.5px;
-            position: relative;
-            display: inline-block;
-        }
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background: var(--accent);
-            margin-top: 8px;
-            border-radius: 2px;
-        }
-        .card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            transition: transform .2s, box-shadow .2s;
-        }
-        .card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 20px rgba(255, 59, 59, .08);
-        }
-        .card h3 {
-            font-size: 1.2rem;
-            margin-bottom: .5rem;
-            color: var(--accent);
-        }
-        .card p {
-            color: #ccc;
-            margin-bottom: .3rem;
-        }
-        .grid-2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-        }
-        @media (max-width: 768px) {
-            .grid-2 {
-                grid-template-columns: 1fr;
-            }
-            .section-title {
-                font-size: 1.6rem;
-            }
-        }
-        .faq-item {
-            border-bottom: 1px solid var(--border);
-            padding: 1rem 0;
-        }
-        .faq-question {
-            font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .faq-question::after {
-            content: '+';
-            font-size: 1.4rem;
-            color: var(--accent);
-            transition: transform .2s;
-        }
-        .faq-question.active::after {
-            transform: rotate(45deg);
-        }
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height .3s ease;
-            color: #bbb;
-            padding-top: .5rem;
-        }
-        .faq-answer.open {
-            max-height: 200px;
-        }
-        .highlight-box {
-            background: linear-gradient(135deg, #1a1a1a 0%, #111 100%);
-            border: 1px solid var(--accent);
-            border-radius: var(--radius);
-            padding: 1.5rem;
-            margin: 2rem 0;
-            position: relative;
-        }
-        .highlight-box::before {
-            content: '💡';
-            position: absolute;
-            top: -12px;
-            left: 16px;
-            background: var(--bg);
-            padding: 0 6px;
-            font-size: 1.2rem;
-        }
-        .highlight-box p {
-            margin: 0;
-            font-size: 1.05rem;
-            color: #ddd;
-        }
-        .highlight-box strong {
-            color: var(--accent);
-        }
-        .tel-button {
-            display: inline-block;
-            background: var(--accent);
-            color: #fff;
-            padding: .7rem 1.5rem;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: background .2s;
-            border: none;
-            cursor: pointer;
-        }
-        .tel-button:hover {
-            background: #e02a2a;
-        }
-        footer {
-            text-align: center;
-            padding: 2rem 1rem;
-            border-top: 1px solid var(--border);
-            color: #666;
-            font-size: .85rem;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>신도림 가라오케 예약 — 정보</title>
+  <meta name="description" content="신도림 가라오케 예약을 앞두고 언제, 누구와, 어느 시간대에 적합한 선택인지 빠르게 판단할 수 있는 기준과 확인사항을 제공합니다.">
+  <meta name="keywords" content="신도림 가라오케, 가라오케 예약, 신도림 노래방, 가라오케 이용 방법, 가라오케 선택 기준">
+  <link rel="canonical" href="https://sindorim-info-song.link-hub.org/about.html">
+  <meta property="og:title" content="신도림 가라오케 예약 — 순간을 정하고 선택을 확정하는 가이드">
+  <meta property="og:description" content="신도림 가라오케 예약 전, 시점·시간대·인원에 맞는 최적의 선택지를 빠르게 확인하세요.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sindorim-info-song.link-hub.org/about.html">
+  <meta property="og:image" content="https://sindorim-info-song.link-hub.org/og-image.jpg">
+  <!-- CSS는 기존 페이지와 동일한 디자인 시스템을 그대로 사용 -->
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <header>
-        <div class="logo">
-            🎤 신도림 가라오케
-            <span>HOT</span>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="/">홈</a></li>
-                <li><a href="/info" class="active">정보</a></li>
-                <li><a href="/price">가격</a></li>
-                <li><a href="/review">후기</a></li>
-                <li><a href="tel:010-6279-0862" class="tel-link">📞 예약</a></li>
-            </ul>
-            <button class="hamburger" id="hamburger-btn" aria-label="메뉴 열기">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </nav>
-        <div class="nav-mobile" id="nav-mobile">
-            <a href="/">홈</a>
-            <a href="/info">정보</a>
-            <a href="/price">가격</a>
-            <a href="/review">후기</a>
-            <a href="tel:010-6279-0862">📞 전화 예약</a>
-        </div>
-    </header>
+<body class="x-wrap-1a0x">
+  <!-- 공통 네비게이션 -->
+  <nav class="r-nav-s31j">
+    <span><a href="/index.html">홈</a></span>
+    <span><a href="/reserve.html">예약하기</a></span>
+    <span><a href="/info.html">정보</a></span>
+    <span><a href="/contact.html">문의</a></span>
+  </nav>
 
-    <main>
-        <section class="container">
-            <h1 class="section-title">신도림 가라오케 완전 정보</h1>
-            <p style="color:#aaa; margin-bottom:2rem; font-size:1.1rem;">야, 내가 직접 신도림에서 놀아본 썰 풀어줄게. 이거 보고 예약하면 절대 후회 안 한다. 진짜야.</p>
+  <main>
+    <section class="m-list-eq4h">
+      <h1>신도림 가라오케 예약 – 상세 안내</h1>
+      <p>신도림 지역에서 가라오케를 즐기려면 먼저 “예약 흐름”을 이해하는 것이 중요합니다. 일반적인 절차는 ① 날짜·시간 선택 → ② 인원 입력 → ③ 방 종류 선택 → ④ 결제 → ⑤ 확인 메일 수신 순으로 진행됩니다. 각각의 단계마다 체크포인트를 놓치지 않으면 예기치 못한 좌석 부족이나 시간 겹침을 방지할 수 있습니다.</p>
+      <p>예약 페이지에서는 입력 폼이 자동으로 인원에 맞는 최소 방 크기를 제안합니다. 예를 들어 5명 이상이면 6인용 방을, 10명 이상이면 대형 파티룸을 자동으로 표시해 주죠. 이런 자동 제안을 그대로 따르는 것이 가장 안전하지만, 필요에 따라 “특별 이벤트 방”을 별도로 선택해도 됩니다.</p>
+    </section>
 
-            <!-- 위치 & 접근성 -->
-            <div class="grid-2">
-                <div class="card">
-                    <h3>📍 위치는?</h3>
-                    <p>신도림역 4번 출구에서 걸어서 3분. 역 앞 골목 바로 안쪽이라 찾기 존나 쉽다.</p>
-                    <p>주소: 서울 구로구 신도림동 123-4 (지번) / 신도림로 45길 12 (도로명)</p>
-                    <p>주차: 건물 뒤편 공영주차장 이용 가능 (2시간 무료)</p>
-                </div>
-                <div class="card">
-                    <h3>⏰ 영업시간</h3>
-                    <p>월~목: 14:00 ~ 02:00</p>
-                    <p>금~토: 14:00 ~ 05:00 (야새들 환영)</p>
-                    <p>일요일: 15:00 ~ 01:00</p>
-                    <p>※ 연중무휴, 단 추석/설날 당일은 전화 확인 ㄱㄱ</p>
-                </div>
-            </div>
+    <section class="m-list-eq4h">
+      <h2>인원별 최적 시간대</h2>
+      <p>가라오케 이용 시간대는 크게 <strong>점심·오후 (12시~16시)</strong>, <strong>저녁·야간 (18시~22시)</strong>로 나뉩니다. 점심·오후 시간은 상대적으로 이용객이 적어 조용히 노래 연습을 하기에 좋으며, 저녁·야간은 친구·동료와 함께 활기찬 분위기를 즐기기에 최적입니다. 특히 20시 이후는 대학생·직장인 그룹이 몰리므로 사전에 예약을 확정하는 것이 필수입니다.</p>
+      <p>인원 규모에 따라 권장 시간대도 달라집니다. 2~4명 소규모는 평일 저녁 18시~20시가 가장 여유롭고, 5~8명 정도의 중규모는 주말 오후 14시~16시가 방이 비어 있는 경우가 많습니다. 9명 이상 대규모 파티는 주말 저녁 19시 이후에 예약을 잡는 것이 일반적이며, 이때는 사전 결제와 방 배치 확인을 반드시 진행하세요.</p>
+    </section>
 
-            <!-- 시설 상세 -->
-            <div class="grid-2">
-                <div class="card">
-                    <h3>🔊 시설 자랑</h3>
-                    <p>▶️ JBL 사운드 시스템 + 무선 마이크 4개</p>
-                    <p>▶️ 65인치 UHD TV (노래방 반주기 연동)</p>
-                    <p>▶️ 방음 완벽 - 옆방 노래 안 들림 (내가 확인함)</p>
-                    <p>▶️ 룸 별 테마 조명 (블루/레드/퍼플 골라 가능)</p>
-                </div>
-                <div class="card">
-                    <h3>🎤 룸 타입</h3>
-                    <p>소형 (2~4인) - 기본 2시간 4만원</p>
-                    <p>중형 (4~8인) - 기본 2시간 6만원</p>
-                    <p>대형 (8~15인) - 기본 2시간 9만원 (단체 파티 특급)</p>
-                    <p>※ 주말/심야 시간대는 1.2배 할증 (하지만 가성비 씹 goat)</p>
-                </div>
-            </div>
+    <section class="m-list-eq4h">
+      <h2>목적별 선택 포인트</h2>
+      <p>가라오케를 찾는 목적은 크게 <strong>연습·스킬 향상</strong>, <strong>주말 파티·생일</strong>, <strong>업무 회식·네트워킹</strong>으로 구분할 수 있습니다. 연습 목적이라면 방 음향 및 마이크 품질이 우수한 “프리미엄 방”을 선택하고, 사운드 부스터 옵션을 추가하면 더욱 정확한 피드백을 받을 수 있습니다.</p>
+      <p>파티·생일 목적이라면 조명과 포토존이 있는 “파티룸”을, 업무 회식이라면 프라이빗 룸과 간단한 스낵바가 구비된 “비즈니스 룸”을 고려하세요. 각각의 방마다 제공되는 부가 서비스(음식, 음료, 무대 조명)가 다르므로 사전에 확인하고, 필요 시 옵션을 추가 주문하면 만족도가 크게 올라갑니다.</p>
+    </section>
 
-            <!-- 꿀팁 하이라이트 -->
-            <div class="highlight-box">
-                <p><strong>🔥 브로가 전하는 꿀팁</strong> — 가라오케 갈 때 음료랑 안주는 직접 사가도 된다? 쿨러백 들고 가면 냉장고에 보관해줌. 근데 미안하니까 간단한 음료 정도만 추천. 그리고 전화로 예약할 때 "블로그 보고 왔어요" 하면 <strong>웰컴 샷</strong> 서비스! 010-6279-0862로 전화해서 꼭 말해보셈.</p>
-            </div>
+    <section class="m-list-eq4h">
+      <h2>예약 전 체크리스트</h2>
+      <ul class="r-box-no68">
+        <li><a href="#time">예약 시간대와 인원 확인</a></li>
+        <li><a href="#room">방 종류와 부가 서비스 옵션 검토</a></li>
+        <li><a href="#payment">결제 방법 및 취소 정책 파악</a></li>
+        <li><a href="#access">입장 절차와 주차 시설 확인</a></li>
+        <li><a href="#equipment">필요한 장비(마이크, 스피커) 사전 점검</a></li>
+      </ul>
+      <p id="time">시간대를 고를 때는 본인·동료들의 일정과 교통 상황을 고려해 여유 있게 잡는 것이 좋습니다. 특히 대중교통 이용 시 역에서 가라오케까지 소요되는 시간을 미리 계산해 두면 늦는 상황을 예방할 수 있습니다.</p>
+      <p id="room">방을 선택한 뒤에는 제공되는 음향 장비와 무대 조명, 그리고 좌석 배치를 사진으로 확인해 두세요. 사진이 없을 경우 고객센터에 문의하면 최신 사진을 이메일로 보내줍니다. 이렇게 하면 현장에 도착했을 때 기대와 실제가 다른 상황을 방지할 수 있습니다.</p>
+    </section>
 
-            <!-- FAQ 섹션 -->
-            <h2 class="section-title" style="font-size:1.6rem;">자주 묻는 질문 (FAQ)</h2>
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">미성년자도 이용 가능한가요?</div>
-                <div class="faq-answer">아니요, 신분증 검사 엄격함. 19세 이상만 입장 가능. 대학생 신분증도 가능하니까 당당하게 들어와.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">반주기에서 최신 노래도 되나요?</div>
-                <div class="faq-answer">ㅇㅇ 금영 반주기 최신 버전이라 차트 1위부터 옛날 노래까지 다 검색됨. 아이유부터 머쉬베놈까지 커버 가능.</div>
-            </div
+    <section class="m-list-eq4h">
+      <h2>자주 묻는 질문 (FAQ)</h2>
+      <div class="r-box-no68">
+        <h3>Q1. 예약 취소는 언제까지 가능한가요?</h3>
+        <p>대부분의 신도림 가라오케는 이용 2시간 전까지 무료 취소가 가능합니다. 2시간 이내 취소 시 전액 차감되니, 일정이 확정되지 않은 경우에는 가급적 2시간 이전에 결정을 내리는 것이 안전합니다.</p>
+
+        <h3>Q2. 초과 인원 시 추가 비용은 어떻게 되나요?</h3>
+        <p>인원 초과 시 1인당 5,000원 정도의 추가 요금이 발생합니다. 추가 인원은 사전에 입력하거나 현장 결제도 가능하지만, 사전 예약 시 미리 결제하는 것이 편리합니다.</p>
+
+        <h3>Q3. 노래 선택권은 어떻게 이용하나요?</h3>
+        <p>방마다 디지털 터치패드가 설치돼 있으며, 최신 노래 DB와 실시간 검색이 가능합니다. 스마트폰 앱을 연동하면 모바일에서도 곡을 검색·추가할 수 있어 팀원들과 쉽게 공유할 수 있습니다.</p>
+
+        <h3>Q4. 주류(맥주·와인) 서비스가 있나요?</h3>
+        <p>일부 방은 주류 서비스가 제공됩니다. 별도 주류 옵션을 선택하면 1인당 최대 2잔까지 주문 가능하며, 연령 확인 절차가 필요합니다. 미성년자는 주류 이용이 제한됩니다.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="r-box-no68">
+    <p>© 2026 신도림 가라오케 정보 센터. 모든 권리 보유.</p>
+  </footer>
 </body>
 </html>
